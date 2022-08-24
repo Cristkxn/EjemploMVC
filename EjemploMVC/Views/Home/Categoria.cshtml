@@ -1,0 +1,16 @@
+﻿@model IEnumerable<AdventureWorksNS.Data.Product>
+@using AdventureWorksNS.Data;
+@{
+
+}
+<h1> @ViewData["Titulo"] </h1>
+<ol>
+
+
+@foreach (Product n in Model)
+{
+        <a asp-controller="Home" asp-action="DetalleProducto" asp-route-id="@n.ProductId">
+        <li>@n.Name - $@n.ListPrice</li>
+        </a>
+}
+</ol>
